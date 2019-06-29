@@ -4,20 +4,19 @@ environment:
     # node.js
     - nodejs_version: "6"
 
-#Install scripts. (runs after repo cloning)
+# Install scripts. (runs after repo cloning)
 install:
- # Get the latest stable version of node.js or io.js
- - ps: Install-Product node $env:nodejs_version
- # Install modules
- - npm install
+  # Get the latest stable version of node.js or io.js
+  - ps: Install-Product node $env:nodejs_version
+  # Install modules
+  - npm install
 
 # Post-install test scripts.
 test_script:
- # Output usefull info for debugging.
- - node --version
- - npm --version
- # Run test
- - npm test
-
- # Don't actually build.
- build: off
+  # Output usefull info for debugging.
+  - node --version
+  - npm --version
+  # Run test
+  - npm test
+  # Don't actually build.
+#  build: off
